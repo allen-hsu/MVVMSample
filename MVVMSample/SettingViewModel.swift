@@ -7,3 +7,23 @@
 //
 
 import Foundation
+import Bond
+//protocol TextFieldViewData: CellViewData {
+//	var textFieldValue: Observable<String?> { get }
+//}
+//
+//protocol Buttonable {
+//	func touchEvent(event: UIControlEvents)
+//}
+//
+//protocol ButtonViewData: CellViewData {
+//	var isVaild: Observable<Bool?> { get }
+//}
+
+//struct SettingViewModel: TextFieldViewData, Buttonable, ButtonViewData {
+//	var isVaild: Observable<Bool?> = Observable(false)
+//	var textFieldValue: Observable<String?> = Observable("")
+//	func touchEvent(event: UIControlEvents){
+//		
+//	}
+//}
