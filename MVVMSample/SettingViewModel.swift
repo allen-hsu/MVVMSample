@@ -20,10 +20,10 @@ import Bond
 //	var isVaild: Observable<Bool?> { get }
 //}
 
-//struct SettingViewModel: TextFieldViewData, Buttonable, ButtonViewData {
-//	var isVaild: Observable<Bool?> = Observable(false)
-//	var textFieldValue: Observable<String?> = Observable("")
-//	func touchEvent(event: UIControlEvents){
-//		
-//	}
-//}
+struct SettingViewModel: TextFieldViewData, Buttonable, ButtonViewData, ViewModel {
+	var isVaild: Observable<Bool?> = Observable(false)
+	var textFieldValue: Observable<String?> = Observable("")
+	func touchEvent(event: UIControlEvents){
+		
+	}
+}

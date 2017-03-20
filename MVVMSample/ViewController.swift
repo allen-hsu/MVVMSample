@@ -11,15 +11,16 @@ import UIKit
 class ViewController: UIViewController {
 
 	var tableView: UITableView?
-	//var viewModel: SettingViewModel?
+	var viewModel: SettingViewModel?
 	var items: [CellConfiguratorType] = [BindableCellConfigurator<TextFieldCell>(), BindableCellConfigurator<ButtonCell>()]
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		//viewModel = SettingViewModel()
+		viewModel = SettingViewModel()
 		tableView = UITableView(frame: view.bounds)
 		tableView!.tableFooterView = UIView()
 		tableView!.rowHeight = 100
 		tableView!.dataSource = self
+		
 		view.addSubview(tableView!)
 		registerCells()
 		// Do any additional setup after loading the view, typically from a nib.
@@ -46,7 +47,7 @@ extension ViewController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cellConfigurator = items[(indexPath as NSIndexPath).row]
 		let cell = tableView.dequeueReusableCell(withIdentifier: cellConfigurator.reuseIdentifier, for: indexPath)
-		//cellConfigurator.update(cell: cell)
+		cellConfigurator.bindViewModel(cell: cell, viewModel: self.viewModel! as! ViewModel)
 		return cell
 	}
 
